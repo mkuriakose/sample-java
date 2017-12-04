@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.fcpy.example</groupId>
+	<artifactId>test-jaxwsboot-provider-ear</artifactId>
+	<version>0.0.2</version>
+	<packaging>ear</packaging>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<modules>
+						<webModule>
+							<groupId>com.fcpy.example</groupId>
+							<artifactId>test-jaxwsboot-provider</artifactId>
+						</webModule>
+					</modules>
+				</configuration>
+				<version>2.10.1</version>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.fcpy.example</groupId>
+			<artifactId>test-jaxwsboot-provider</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+</project>

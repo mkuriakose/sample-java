@@ -1,0 +1,25 @@
+java [VMargs] -jar spring-tcpclient-1.0.0.jar [properties]
+
+Program arguments (properties):
+  --spring.config.location=file:{path}
+                   The external configuration path. If profile is used, this
+                   setting will be ignored.
+                   
+** The following program arguments are only applicable when the profile and 
+external file setting are not used.           
+  --host           Host Name/IP of the remote server.
+  --port           Port Number of the remote server.
+  --file           File Path of the request data.
+
+** Extra program arguments can be set thru profile. Please refer to default and
+example properties for more information.
+
+
+VM arguments (VMargs) for properties setting (-D<name>=<value>):
+  -Dspring.profiles.active={profile}
+                   A Spring Environment property to locate the profile-specific
+                   application properties.
+  -Dtcpclient={profile}
+                   Equivalent to spring.profiles.active. 
+                   If spring.profiles.active is found, this argument will be 
+                   ignored.

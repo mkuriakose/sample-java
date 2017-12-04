@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="test-jaxwsboot-provider-ear">
+        <wb-resource deploy-path="/" source-path="/"/>
+        <dependent-module archiveName="test-jaxwsboot-provider.war" deploy-path="/" handle="module:/resource/test-jaxwsboot-provider/test-jaxwsboot-provider">
+            <dependent-object>Module_1447406691010</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

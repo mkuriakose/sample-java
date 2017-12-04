@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <display-name>test-jaxwsboot-consumer</display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    <service-ref>
+        <service-ref-name>service/CalculatorClient</service-ref-name>
+        <service-interface>com.fcpy.example.jaxwsboot.client.calculator.CalculatorService</service-interface>
+        <wsdl-file>WEB-INF/wsdl/CalculatorService.wsdl</wsdl-file>
+        <service-qname xmlns:pfx="http://service.jaxwsboot.example.fcpy.com/">pfx:CalculatorService</service-qname>
+        <port-component-ref>
+            <service-endpoint-interface>com.fcpy.example.jaxwsboot.client.calculator.CalculatorDelegate</service-endpoint-interface>
+            <enable-mtom>false</enable-mtom>
+        </port-component-ref>
+    </service-ref>
+    <service-ref>
+        <service-ref-name>service/ConverterClient</service-ref-name>
+        <service-interface>com.fcpy.example.jaxwsboot.client.converter.ConverterService</service-interface>
+        <wsdl-file>WEB-INF/wsdl/ConverterService.wsdl</wsdl-file>
+        <service-qname xmlns:pfx="http://service.jaxwsboot.example.fcpy.com/">pfx:ConverterService</service-qname>
+        <port-component-ref>
+            <service-endpoint-interface>com.fcpy.example.jaxwsboot.client.converter.ConverterDelegate</service-endpoint-interface>
+            <enable-mtom>false</enable-mtom>
+        </port-component-ref>
+    </service-ref>
+</web-app>

@@ -1,0 +1,38 @@
+java [VMargs] -jar spring-mqutil-1.2.0.jar [options] [properties]
+
+Program arguments (options):
+  -c               Count the number of message in the queue.
+  -b               Browse and print all messages in the queue.
+  -g               Get and print all messages in the queue.
+  -e               Clean the queue.
+  -f <file>        Read a file and put the content into the queue.
+  -p <value>       Put a String value into the queue.
+
+
+Program arguments (properties):
+  --spring.config.location=file:{path}
+                   The external configuration path. If profile is used, this
+                   setting will be ignored.
+                   
+** The following program arguments are only applicable when the profile and 
+external file setting are not used.           
+  --host           Host Name of MQ Manager.
+  --port           Port Number of MQ Manager.
+  --ch             Server Connection Channel.
+  --mqm            Target MQ Manager.
+  --queue          Target Queue.
+
+** Extra program arguments can be set thru profile. Please refer to default and
+example properties for more information.
+
+
+VM arguments (VMargs) for properties setting (-D<name>=<value>):
+  -Dspring.profiles.active={profile}
+                   A Spring Environment property to locate the profile-specific
+                   application properties.
+  -Dmqutil={profile}
+                   Equivalent to spring.profiles.active. 
+                   If spring.profiles.active is found, this argument will be 
+                   ignored.
+
+... Copyright (c) 2015, FCPY Studio.

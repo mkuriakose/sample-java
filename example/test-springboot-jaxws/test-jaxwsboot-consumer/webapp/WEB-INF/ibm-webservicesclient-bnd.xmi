@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.etools.webservice.wscbnd:ClientBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.etools.webservice.wscbnd="http://www.ibm.com/websphere/appserver/schemas/5.0.2/wscbnd.xmi" xmi:id="ClientBinding_1447742804361">
+  <serviceRefs xmi:id="ServiceRef_1447742804361" serviceRefLink="service/CalculatorService">
+    <portQnameBindings xmi:id="PortQnameBinding_1447742804361" portQnameNamespaceLink="http://service.jaxwsboot.example.fcpy.com/" portQnameLocalNameLink="CalculatorPort" overriddenEndpointURI="http://localhost:9080/test-jaxwsboot-provider/CalculatorService"/>
+  </serviceRefs>
+  <serviceRefs xmi:id="ServiceRef_1447742890160" serviceRefLink="service/ConverterService">
+    <portQnameBindings xmi:id="PortQnameBinding_1447742890160" portQnameNamespaceLink="http://service.jaxwsboot.example.fcpy.com/" portQnameLocalNameLink="ConverterPort" overriddenEndpointURI="http://localhost:9080/test-jaxwsboot-provider/ConverterService"/>
+  </serviceRefs>
+</com.ibm.etools.webservice.wscbnd:ClientBinding>

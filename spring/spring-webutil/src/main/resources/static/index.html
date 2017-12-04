@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WEBUTIL</title>
+<style>
+<!--
+td {
+    font-size: 15px; height: 100%; text-align: left; vertical-align: top; 
+    border-style: solid; border-width: 1px; border-color: #000000 #CCCCCC #000000 #CCCCCC; padding: 3px;
+}
+th {
+    font-size: 15px; text-align:left; vertical-align: top; 
+	border-style: solid; border-width: 1px; border-color: #000000 #CCCCCC #000000 #CCCCCC; padding: 3px;
+	background-color: #FFDDCC;
+}
+table {
+    border-style: solid; border-width: 1px; border-color: #000000; border-collapse: collapse;
+}
+input {
+    font-size: 13px
+}
+//-->
+</style>
+<script type="text/javascript">
+<!--
+function reset() {
+	document.getElementById("rqstTextArea").value = "";
+	document.getElementById("rspnTextArea").value = "";
+}
+function triggerTcpClient() {
+	var url = "tcpclient";
+	var buttonId = "submitButton";
+	var resultId = "rspnTextArea";
+    var host = encodeURIComponent(document.getElementById("hostText").value);
+    var port = encodeURIComponent(document.getElementById("portText").value);
+    var rqst = encodeURIComponent(document.getElementById("rqstTextArea").value);
+	var xmlhttp;
+	try {
+		if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp=new XMLHttpRequest();
+		} else { // code for IE6, IE5
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState==0) {
+				document.getElementById(resultId).value="The request is not initialized.";
+			} else if (xmlhttp.readyState==1) {
+				document.getElementById(resultId).value="The request has been set up.";
+			} else if (xmlhttp.readyState==2) {
+				document.getElementById(resultId).value="The request has been sent.";
+			} else if (xmlhttp.readyState==3) {
+				document.getElementById(resultId).value="The request is in process.";
+			} else if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+				document.getElementById(resultId).value=xmlhttp.responseText;
+				document.getElementById(buttonId).disabled = false;
+			} else {
+				document.getElementById(resultId).value='ABNORMAL: ' + xmlhttp.status + ' ; ' + xmlhttp.responseText;
+				document.getElementById(buttonId).disabled = false;
+			}
+		}
+		document.getElementById(resultId).value = "Running...";
+		document.getElementById(buttonId).disabled = true;
+		xmlhttp.open("POST",url,true);
+		xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		xmlhttp.send("host=" + host + "&port=" + port + "&rqst=" + rqst);
+	} catch (e) {
+		alert("Unable to run: " + e);
+		document.getElementById(resultId).value = "--";
+		document.getElementById(buttonId).disabled = false;
+	}
+}
+//-->
+</script>
+</head>
+<body>
+<b>WebUtil : TcpClient</b>
+<hr/>
+<table class="param">
+<tr>
+<th width="20">Host:</th>
+<td><input id="hostText" type="text" value="127.0.0.1" /></td>
+<th width="20">Port:</th>
+<td><input id="portText" type="text" value="80" /></td>
+</tr>
+</table>
+<br/>
+<table>
+<tr>
+<th width="200">Request</th>
+<th width="400">Response</th>
+</tr>
+<tr>
+<td><textarea id="rqstTextArea" cols="70" rows="28"></textarea></td>
+<td><textarea id="rspnTextArea" cols="70" rows="28"></textarea></td>
+</tr>
+</table>
+<p>
+<input id="resetAll" type="button" value="Reset" onclick="javascript: reset()" />
+<input id="submitButton" type="button" value="Submit" onclick="javascript: triggerTcpClient()" />
+</p>
+</body>
+</html>

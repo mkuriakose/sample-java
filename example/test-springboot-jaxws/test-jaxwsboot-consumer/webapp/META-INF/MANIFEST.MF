@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Ignore-Scanning-Packages: org.springframework
+

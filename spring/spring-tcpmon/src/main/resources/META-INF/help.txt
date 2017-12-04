@@ -1,0 +1,23 @@
+java [VMargs] -jar spring-tcpmon-1.1.0.jar [properties]
+
+Program arguments (properties):
+  --spring.config.location=file:{path}
+                   The external configuration path. If profile is used, this
+                   setting will be ignored.
+                   
+** The following program arguments are only applicable when the profile and 
+external file setting are not used.           
+  --listenPort     Local Listener Port Number.
+  --targetHost     Target Host Name / IP.
+  --targetPort     Target Port.
+
+VM arguments (VMargs) for properties setting (-D<name>=<value>):
+  -Dspring.profiles.active={profile}
+                   A Spring Environment property to locate the profile-specific
+                   application properties.
+  -Dtcpmon={profile}
+                   Equivalent to spring.profiles.active. 
+                   If spring.profiles.active is found, this argument will be 
+                   ignored.
+
+... Copyright (c) 2015, FCPY Studio.

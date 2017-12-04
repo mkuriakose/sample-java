@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.jaxwsboot.example.fcpy.com/" version="1.0" xmlns:tns="http://service.jaxwsboot.example.fcpy.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="UnsupportedEncodingException" type="tns:UnsupportedEncodingException"/>
+
+  <xs:element name="encodeHex" type="tns:encodeHex"/>
+
+  <xs:element name="encodeHexResponse" type="tns:encodeHexResponse"/>
+
+  <xs:element name="toUpperCase" type="tns:toUpperCase"/>
+
+  <xs:element name="toUpperCaseResponse" type="tns:toUpperCaseResponse"/>
+
+  <xs:complexType name="toUpperCase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="data" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="toUpperCaseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseBean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="responseBean">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="executionTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="result" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="encodeHex">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="data" type="xs:string"/>
+      <xs:element minOccurs="0" name="encoding" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="encodeHexResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseBean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UnsupportedEncodingException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.jaxwsboot.example.fcpy.com/" version="1.0" xmlns:tns="http://service.jaxwsboot.example.fcpy.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="add" type="tns:add"/>
+
+  <xs:element name="addResponse" type="tns:addResponse"/>
+
+  <xs:element name="divide" type="tns:divide"/>
+
+  <xs:element name="divideResponse" type="tns:divideResponse"/>
+
+  <xs:element name="multiply" type="tns:multiply"/>
+
+  <xs:element name="multiplyResponse" type="tns:multiplyResponse"/>
+
+  <xs:element name="substract" type="tns:substract"/>
+
+  <xs:element name="substractResponse" type="tns:substractResponse"/>
+
+  <xs:complexType name="divide">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dividend" type="xs:string"/>
+      <xs:element minOccurs="0" name="divisor" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="divideResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseBean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="responseBean">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="executionTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="result" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="multiply">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="multiplier" type="xs:string"/>
+      <xs:element minOccurs="0" name="multiplicand" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="multiplyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseBean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="substract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="minuend" type="xs:string"/>
+      <xs:element minOccurs="0" name="subtrahend" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="substractResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseBean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="add">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="augend" type="xs:string"/>
+      <xs:element minOccurs="0" name="addend" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseBean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
